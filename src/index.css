@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Newsreader", serif;
+  --font-sans: "Manrope", sans-serif;
+
+  --color-primary: #1B3022;
+  --color-brand-bg: #F8F2ED;
+  --color-brand-accent: #EBE3D8;
+  --color-on-surface: #1E1B18;
+  
+  --spacing-section-gap: 160px;
+  --spacing-gutter: 32px;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-bg text-primary font-sans antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif font-light tracking-tight;
+  }
+
+  .artistic-serif {
+    @apply italic;
+    font-optical-sizing: auto;
+  }
+}
+
+@layer components {
+  .section-gap {
+    @apply py-20 md:py-40;
+  }
+
+  .container-custom {
+    @apply max-w-[1440px] mx-auto px-8 md:px-16;
+  }
+
+  .nav-link {
+    @apply text-[10px] uppercase tracking-[0.2em] text-primary/60 hover:text-primary transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-brand-bg px-10 py-4 text-[11px] uppercase tracking-[0.2em] hover:bg-primary/90 transition-all;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary px-10 py-4 text-[11px] uppercase tracking-[0.2em] hover:bg-primary hover:text-brand-bg transition-all;
+  }
+}
